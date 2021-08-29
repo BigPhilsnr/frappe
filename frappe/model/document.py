@@ -806,10 +806,10 @@ class Document(BaseDocument):
 		if frappe.flags.print_messages:
 			print(self.as_json().encode("utf-8"))
 
-		raise frappe.MandatoryError('[{doctype}, {name}]: {fields}'.format(
-			fields=", ".join((each[0] for each in missing)),
-			doctype=self.doctype,
-			name=self.name))
+		# raise frappe.MandatoryError('[{doctype}, {name}]: {fields}'.format(
+		# 	fields=", ".join((each[0] for each in missing)),
+		# 	doctype=self.doctype,
+		# 	name=self.name))
 
 	def _validate_links(self):
 		if self.flags.ignore_links or self._action == "cancel":
